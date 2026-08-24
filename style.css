@@ -1,0 +1,1514 @@
+/* =========================================
+   VAISHNAVI HULKE PORTFOLIO
+   Modern Editorial Developer Theme
+========================================= */
+
+
+/* =========================================
+   1. RESET & GLOBAL SETTINGS
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f1e8;
+    color: #17202a;
+    line-height: 1.6;
+}
+
+
+/* Prevent images from overflowing */
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+/* Remove default list styling */
+
+ul {
+    list-style: none;
+}
+
+
+/* Links */
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* Paragraph width */
+
+p {
+    max-width: 70ch;
+}
+
+
+/* =========================================
+   2. ACCESSIBILITY
+========================================= */
+
+
+/* Skip link */
+
+.skip-link {
+    position: absolute;
+    left: 1rem;
+    top: -100px;
+    z-index: 9999;
+
+    padding: 0.8rem 1rem;
+
+    background: #17202a;
+    color: #ffffff;
+
+    font-weight: 700;
+
+    border-radius: 4px;
+}
+
+
+.skip-link:focus {
+    top: 1rem;
+}
+
+
+/* Visible keyboard focus */
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid #b54432;
+    outline-offset: 4px;
+}
+
+
+/* =========================================
+   3. HEADER & NAVIGATION
+========================================= */
+
+.site-header {
+    width: 100%;
+    border-bottom: 1px solid #c9c1b4;
+}
+
+
+.main-navigation {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    padding: 1.5rem 2rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 2rem;
+}
+
+
+.logo {
+    font-size: 1rem;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+}
+
+
+.nav-list {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+
+.nav-list a {
+    position: relative;
+
+    font-size: 0.9rem;
+    font-weight: 700;
+
+    transition:
+        color 0.2s ease;
+}
+
+
+.nav-list a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -6px;
+
+    width: 0;
+    height: 2px;
+
+    background: #b54432;
+
+    transition:
+        width 0.2s ease;
+}
+
+
+.nav-list a:hover::after,
+.nav-list a[aria-current="page"]::after {
+    width: 100%;
+}
+
+
+.nav-list a:hover {
+    color: #b54432;
+}
+
+
+/* =========================================
+   4. MAIN CONTAINER
+========================================= */
+
+main {
+    overflow: hidden;
+}
+
+
+/* =========================================
+   5. HERO SECTION
+========================================= */
+
+.hero-section {
+    max-width: 1200px;
+    min-height: 75vh;
+
+    margin: 0 auto;
+
+    padding: 6rem 2rem;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.5fr)
+        minmax(250px, 0.7fr);
+
+    align-items: center;
+
+    gap: 5rem;
+}
+
+
+.eyebrow {
+    margin-bottom: 1.2rem;
+
+    color: #b54432;
+
+    font-size: 0.78rem;
+    font-weight: 800;
+
+    letter-spacing: 0.15em;
+}
+
+
+.hero-content h1 {
+    max-width: 900px;
+
+    margin-bottom: 2rem;
+
+    font-size: clamp(3rem, 7vw, 6.5rem);
+
+    line-height: 0.95;
+
+    letter-spacing: -0.05em;
+}
+
+
+.hero-description {
+    max-width: 600px;
+
+    margin-bottom: 2rem;
+
+    font-size: 1.1rem;
+
+    color: #4d555b;
+}
+
+
+/* =========================================
+   6. HERO CARD
+========================================= */
+
+.hero-card {
+    min-height: 400px;
+
+    padding: 2rem;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    background: #17202a;
+
+    color: #f5f1e8;
+
+    border-radius: 0;
+}
+
+
+.hero-card-small {
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    font-weight: 700;
+}
+
+
+.hero-initials {
+    font-size: clamp(6rem, 12vw, 10rem);
+
+    font-weight: 900;
+
+    line-height: 0.8;
+
+    color: #b54432;
+}
+
+
+.hero-card-name {
+    font-size: 1.4rem;
+    font-weight: 800;
+    line-height: 1.05;
+}
+
+
+.hero-card-role {
+    font-size: 0.75rem;
+
+    letter-spacing: 0.15em;
+
+    color: #c9c1b4;
+}
+
+
+/* =========================================
+   7. BUTTONS
+========================================= */
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+
+.button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 48px;
+
+    padding: 0.8rem 1.4rem;
+
+    border: 2px solid #17202a;
+
+    font-weight: 800;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+
+.primary-button {
+    background: #b54432;
+    color: #ffffff;
+    border-color: #b54432;
+}
+
+
+.primary-button:hover {
+    background: #17202a;
+    border-color: #17202a;
+
+    transform: translateY(-3px);
+}
+
+
+.secondary-button {
+    background: transparent;
+}
+
+
+.secondary-button:hover {
+    background: #17202a;
+    color: #ffffff;
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================================
+   8. SECTION LABEL
+========================================= */
+
+.section-label {
+    display: flex;
+
+    align-items: center;
+
+    gap: 1rem;
+
+    margin-bottom: 3rem;
+
+    font-size: 0.75rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.15em;
+
+    color: #535b60;
+}
+
+
+.section-label span:first-child {
+    color: #b54432;
+}
+
+
+/* =========================================
+   9. ABOUT PREVIEW
+========================================= */
+
+.about-preview,
+.skills-preview,
+.projects-preview,
+.page-intro,
+.about-story,
+.education-section,
+.focus-section,
+.learning-section,
+.skill-category,
+.project-case-study,
+.project-philosophy,
+.contact-section,
+.social-section {
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding: 7rem 2rem;
+
+    border-top: 1px solid #c9c1b4;
+}
+
+
+.about-content {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 5rem;
+}
+
+
+.about-content h2,
+.skills-content h2,
+.projects-heading h2,
+.two-column-layout h2,
+.learning-content h2 {
+    font-size: clamp(2.5rem, 5vw, 5rem);
+
+    line-height: 0.95;
+
+    letter-spacing: -0.04em;
+}
+
+
+.about-text {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 1.5rem;
+
+    color: #4d555b;
+
+    font-size: 1.05rem;
+}
+
+
+/* =========================================
+   10. TEXT LINKS
+========================================= */
+
+.text-link {
+    width: fit-content;
+
+    color: #b54432;
+
+    font-weight: 800;
+
+    border-bottom: 2px solid #b54432;
+
+    padding-bottom: 3px;
+
+    transition:
+        color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+
+.text-link:hover {
+    color: #17202a;
+    border-color: #17202a;
+}
+
+
+/* =========================================
+   11. SKILLS PREVIEW
+========================================= */
+
+.skills-content {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 5rem;
+}
+
+
+.skills-list {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    border-top: 1px solid #c9c1b4;
+}
+
+
+.skills-list li {
+    padding: 1.2rem 0;
+
+    border-bottom: 1px solid #c9c1b4;
+
+    font-weight: 800;
+}
+
+
+/* =========================================
+   12. PROJECT PREVIEW
+========================================= */
+
+.projects-heading {
+    display: flex;
+
+    align-items: end;
+
+    justify-content: space-between;
+
+    gap: 2rem;
+
+    margin-bottom: 4rem;
+}
+
+
+.project-preview {
+    display: grid;
+
+    grid-template-columns: 120px 1fr;
+
+    gap: 2rem;
+
+    padding: 2rem 0;
+
+    border-top: 1px solid #c9c1b4;
+}
+
+
+.project-number {
+    color: #b54432;
+
+    font-size: 1rem;
+
+    font-weight: 900;
+
+    letter-spacing: 0.08em;
+}
+
+
+.project-info h3 {
+    margin-bottom: 0.8rem;
+
+    font-size: 2rem;
+}
+
+
+.project-info p {
+    margin-bottom: 1.2rem;
+
+    color: #4d555b;
+}
+
+
+.technology-list {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 0.6rem;
+}
+
+
+.technology-list li {
+    padding: 0.35rem 0.7rem;
+
+    border: 1px solid #aaa196;
+
+    font-size: 0.75rem;
+
+    font-weight: 700;
+}
+
+
+/* =========================================
+   13. PAGE INTRO
+========================================= */
+
+.page-intro {
+    padding-top: 8rem;
+
+    padding-bottom: 8rem;
+}
+
+
+.page-intro h1 {
+    max-width: 1000px;
+
+    margin-bottom: 2rem;
+
+    font-size: clamp(3.5rem, 8vw, 7rem);
+
+    line-height: 0.92;
+
+    letter-spacing: -0.055em;
+}
+
+
+.page-intro-text {
+    max-width: 650px;
+
+    font-size: 1.15rem;
+
+    color: #4d555b;
+}
+
+
+/* =========================================
+   14. TWO COLUMN LAYOUT
+========================================= */
+
+.two-column-layout {
+    display: grid;
+
+    grid-template-columns: 0.8fr 1.2fr;
+
+    gap: 5rem;
+}
+
+
+.story-content {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 1.5rem;
+
+    color: #4d555b;
+
+    font-size: 1.05rem;
+}
+
+
+/* =========================================
+   15. EDUCATION
+========================================= */
+
+.education-list {
+    border-top: 1px solid #c9c1b4;
+}
+
+
+.education-item {
+    padding: 2rem 0;
+
+    border-bottom: 1px solid #c9c1b4;
+}
+
+
+.education-year {
+    margin-bottom: 0.5rem;
+
+    color: #b54432;
+
+    font-size: 0.75rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.12em;
+}
+
+
+.education-item h3 {
+    margin-bottom: 0.5rem;
+
+    font-size: 1.6rem;
+}
+
+
+.education-item p:last-child {
+    color: #4d555b;
+}
+
+
+/* =========================================
+   16. FOCUS LIST
+========================================= */
+
+.focus-content {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 5rem;
+}
+
+
+.focus-list {
+    border-top: 1px solid #c9c1b4;
+}
+
+
+.focus-list li {
+    padding: 1.2rem 0;
+
+    border-bottom: 1px solid #c9c1b4;
+
+    font-weight: 700;
+}
+
+
+.focus-list li::before {
+    content: "→";
+
+    margin-right: 1rem;
+
+    color: #b54432;
+}
+
+
+/* =========================================
+   17. HIGHLIGHT SECTION
+========================================= */
+
+.highlight-section,
+.accessibility-section {
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding: 7rem 2rem;
+
+    background: #17202a;
+
+    color: #f5f1e8;
+}
+.highlight-section .eyebrow,
+.accessibility-section .eyebrow {
+  color: #ffb085;
+}
+
+
+
+.highlight-content,
+.accessibility-content {
+    max-width: 800px;
+}
+
+
+.highlight-content h2,
+.accessibility-content h2 {
+    margin-bottom: 2rem;
+
+    font-size: clamp(3rem, 6vw, 6rem);
+
+    line-height: 0.9;
+
+    letter-spacing: -0.05em;
+}
+
+
+.highlight-content p:last-child,
+.accessibility-content p:last-child {
+    color: #c9c1b4;
+
+    font-size: 1.05rem;
+}
+
+
+/* =========================================
+   18. SKILL CATEGORY
+========================================= */
+
+.skill-category {
+    display: grid;
+
+    grid-template-columns: 100px 1fr;
+
+    gap: 3rem;
+}
+
+
+.skill-category-number {
+    color: #b54432;
+
+    font-size: 1rem;
+
+    font-weight: 900;
+}
+
+
+.skill-category-content h2 {
+    margin-bottom: 0.8rem;
+
+    font-size: clamp(2rem, 4vw, 4rem);
+
+    line-height: 1;
+}
+
+
+.skill-category-content > p {
+    margin-bottom: 3rem;
+
+    color: #4d555b;
+}
+
+
+.skill-list {
+    border-top: 1px solid #c9c1b4;
+}
+
+
+.skill-list li {
+    display: grid;
+
+    grid-template-columns: 50px 1fr 1fr;
+
+    gap: 1rem;
+
+    align-items: center;
+
+    padding: 1.2rem 0;
+
+    border-bottom: 1px solid #c9c1b4;
+}
+
+
+.skill-list li span:first-child {
+    color: #b54432;
+
+    font-size: 0.75rem;
+
+    font-weight: 800;
+}
+
+
+.skill-list li span:last-child {
+    color: #535b60;
+
+    font-size: 0.85rem;
+}
+
+
+/* =========================================
+   19. LEARNING SECTION
+========================================= */
+
+.learning-content {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 5rem;
+}
+
+
+.learning-list {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 0;
+
+    border-top: 1px solid #c9c1b4;
+}
+
+
+.learning-list li {
+    padding: 1.2rem 0;
+
+    border-bottom: 1px solid #c9c1b4;
+
+    font-weight: 700;
+}
+
+
+.learning-list li::before {
+    content: "+";
+
+    margin-right: 0.8rem;
+
+    color: #b54432;
+}
+
+
+/* =========================================
+   20. PROJECT CASE STUDIES
+========================================= */
+
+.project-case-study {
+    display: grid;
+
+    grid-template-columns: 180px 1fr;
+
+    gap: 4rem;
+}
+
+
+.project-meta p:last-child {
+    margin-top: 0.5rem;
+
+    color: #535b60;
+
+    font-size: 0.7rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.12em;
+}
+
+
+.project-details h2 {
+    margin-bottom: 1.5rem;
+
+    font-size: clamp(3rem, 6vw, 6rem);
+
+    line-height: 0.9;
+
+    letter-spacing: -0.05em;
+}
+
+
+.project-summary {
+    max-width: 700px;
+
+    margin-bottom: 3rem;
+
+    color: #4d555b;
+
+    font-size: 1.15rem;
+}
+
+
+.project-information {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 2rem;
+
+    margin-bottom: 3rem;
+}
+
+
+.project-information h3 {
+    margin-bottom: 0.8rem;
+
+    font-size: 0.85rem;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.08em;
+}
+
+
+.project-information p {
+    color: #5b6267;
+
+    font-size: 0.95rem;
+}
+
+
+.project-actions {
+    margin-top: 2rem;
+}
+
+
+/* =========================================
+   21. CONTACT SECTION
+========================================= */
+
+.contact-section {
+    display: grid;
+
+    grid-template-columns: 0.8fr 1.2fr;
+
+    gap: 5rem;
+}
+
+
+.contact-introduction h2 {
+    margin-bottom: 1.5rem;
+
+    font-size: clamp(2.5rem, 5vw, 5rem);
+
+    line-height: 0.95;
+
+    letter-spacing: -0.04em;
+}
+
+
+.contact-introduction > p {
+    margin-bottom: 2rem;
+
+    color: #5b6267;
+}
+
+
+.contact-details {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 1.5rem;
+
+    margin-top: 3rem;
+
+    padding-top: 2rem;
+
+    border-top: 1px solid #c9c1b4;
+}
+
+
+.contact-details h3 {
+    margin-bottom: 0.3rem;
+
+    font-size: 0.75rem;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.12em;
+}
+
+
+.contact-details a {
+    color: #b54432;
+
+    font-weight: 700;
+}
+
+
+.contact-details p {
+    color: #5b6267;
+}
+
+
+/* =========================================
+   22. CONTACT FORM
+========================================= */
+
+.contact-form-container {
+    padding: 2rem;
+
+    background: #ffffff;
+
+    border: 1px solid #c9c1b4;
+}
+
+
+.contact-form-container h2 {
+    margin-bottom: 0.5rem;
+
+    font-size: 2rem;
+}
+
+
+#form-instructions {
+    margin-bottom: 2rem;
+
+    color: #5b6267;
+
+    font-size: 0.9rem;
+}
+
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 0.5rem;
+
+    font-weight: 800;
+}
+
+
+.form-group label span {
+    color: #b54432;
+}
+
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+
+    padding: 0.9rem 1rem;
+
+    border: 1px solid #aaa196;
+
+    border-radius: 0;
+
+    background: #f5f1e8;
+
+    color: #17202a;
+
+    font: inherit;
+}
+
+
+.form-group textarea {
+    resize: vertical;
+}
+
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #747a7e;
+}
+
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #b54432;
+
+    outline: 3px solid rgba(232, 93, 63, 0.2);
+}
+
+
+.form-note {
+    margin-bottom: 1.5rem;
+
+    color: #535b60;
+
+    font-size: 0.8rem;
+}
+
+
+/* =========================================
+   23. SOCIAL SECTION
+========================================= */
+
+.social-content {
+    display: flex;
+
+    align-items: end;
+
+    justify-content: space-between;
+
+    gap: 3rem;
+}
+
+
+.social-content h2 {
+    max-width: 600px;
+
+    font-size: clamp(2.5rem, 5vw, 5rem);
+
+    line-height: 0.95;
+
+    letter-spacing: -0.04em;
+}
+
+
+.social-links {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 1rem;
+}
+
+
+.social-links a {
+    color: #b54432;
+
+    font-weight: 800;
+
+    border-bottom: 2px solid #b54432;
+
+    padding-bottom: 0.2rem;
+}
+
+
+.social-links a:hover {
+    color: #17202a;
+
+    border-color: #17202a;
+}
+
+
+/* =========================================
+   24. CONTACT CTA
+========================================= */
+
+.contact-cta {
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding: 8rem 2rem;
+
+    text-align: center;
+
+    border-top: 1px solid #c9c1b4;
+}
+
+
+.contact-cta h2 {
+    max-width: 850px;
+
+    margin: 0 auto 2rem;
+
+    font-size: clamp(3rem, 7vw, 7rem);
+
+    line-height: 0.9;
+
+    letter-spacing: -0.055em;
+}
+
+
+/* =========================================
+   25. FOOTER
+========================================= */
+
+.site-footer {
+    border-top: 1px solid #c9c1b4;
+}
+
+
+.footer-content {
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding: 2rem;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 2rem;
+}
+
+
+.footer-content p {
+    color: #535b60;
+
+    font-size: 0.8rem;
+}
+
+
+.footer-content nav {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 1.5rem;
+}
+
+
+.footer-content nav a {
+    font-size: 0.8rem;
+
+    font-weight: 700;
+}
+
+
+.footer-content nav a:hover {
+    color: #b54432;
+}
+
+
+/* =========================================
+   26. RESPONSIVE DESIGN
+========================================= */
+
+
+/* Tablet */
+
+@media (max-width: 900px) {
+
+    .hero-section {
+        grid-template-columns: 1fr;
+
+        gap: 3rem;
+
+        min-height: auto;
+    }
+
+
+    .hero-card {
+        min-height: 300px;
+    }
+
+
+    .about-content,
+    .skills-content,
+    .two-column-layout,
+    .focus-content,
+    .learning-content,
+    .contact-section {
+        grid-template-columns: 1fr;
+
+        gap: 3rem;
+    }
+
+
+    .project-information {
+        grid-template-columns: 1fr 1fr;
+    }
+
+
+    .social-content {
+        align-items: start;
+
+        flex-direction: column;
+    }
+
+}
+
+
+/* Mobile */
+
+@media (max-width: 650px) {
+
+    .main-navigation {
+        padding: 1.2rem 1rem;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+
+    .nav-list {
+        width: 100%;
+
+        display: grid;
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 0.8rem;
+    }
+
+
+    .nav-list a {
+        font-size: 0.8rem;
+    }
+
+
+    .hero-section,
+    .about-preview,
+    .skills-preview,
+    .projects-preview,
+    .page-intro,
+    .about-story,
+    .education-section,
+    .focus-section,
+    .learning-section,
+    .skill-category,
+    .project-case-study,
+    .project-philosophy,
+    .contact-section,
+    .social-section {
+        padding-left: 1rem;
+
+        padding-right: 1rem;
+
+        padding-top: 5rem;
+
+        padding-bottom: 5rem;
+    }
+
+
+    .hero-content h1 {
+        font-size: clamp(3rem, 15vw, 5rem);
+    }
+
+
+    .hero-description {
+        font-size: 1rem;
+    }
+
+
+    .hero-card {
+        min-height: 260px;
+    }
+
+
+    .hero-initials {
+        font-size: 6rem;
+    }
+
+
+    .skills-list {
+        grid-template-columns: 1fr;
+    }
+
+
+    .projects-heading {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+
+    .project-preview {
+        grid-template-columns: 1fr;
+
+        gap: 1rem;
+    }
+
+
+    .page-intro h1 {
+        font-size: clamp(3rem, 14vw, 5rem);
+    }
+
+
+    .skill-category {
+        grid-template-columns: 1fr;
+
+        gap: 1rem;
+    }
+
+
+    .skill-list li {
+        grid-template-columns: 35px 1fr;
+
+        gap: 0.5rem;
+    }
+
+
+    .skill-list li span:last-child {
+        grid-column: 2;
+    }
+
+
+    .learning-list {
+        grid-template-columns: 1fr;
+    }
+
+
+    .project-case-study {
+        grid-template-columns: 1fr;
+
+        gap: 1.5rem;
+    }
+
+
+    .project-details h2 {
+        font-size: clamp(3rem, 14vw, 5rem);
+    }
+
+
+    .project-information {
+        grid-template-columns: 1fr;
+    }
+
+
+    .contact-form-container {
+        padding: 1.2rem;
+    }
+
+
+    .footer-content {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        padding: 1.5rem 1rem;
+    }
+
+
+    .footer-content nav {
+        gap: 1rem;
+    }
+
+
+    .contact-cta {
+        padding-left: 1rem;
+
+        padding-right: 1rem;
+
+        padding-top: 6rem;
+
+        padding-bottom: 6rem;
+    }
+
+}
+
+
+/* =========================================
+   27. REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+
+        animation-duration: 0.01ms !important;
+
+        animation-iteration-count: 1 !important;
+    }
+
+}
